@@ -10,8 +10,18 @@ import UIKit
 import MapKit
 class ViewController: UIViewController, XMLParserDelegate, CLLocationManagerDelegate {
     
+    @IBOutlet weak var menuButton: UIButton!
+    @IBOutlet weak var menuView: UIView!
     @IBOutlet var searchBtn: UIButton!
     @IBOutlet weak var mapView: MKMapView!
+    @IBAction func menuButtonPressed(_ sender: Any) {
+        if(menuView.isHidden == true) {
+           menuView.isHidden = false
+        }
+        else {
+            menuView.isHidden = true
+        }
+    }
     
     var annotation: BusanData?
     var annotations: Array = [BusanData]()
